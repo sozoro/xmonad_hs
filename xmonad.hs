@@ -71,7 +71,7 @@ main = do
       ]
       False
     $ ewmh def
-    { terminal           = "termite-wrapped"
+    { terminal           = "termonad"
     , manageHook         = myManageHookFloat
     , focusedBorderColor = active
     , normalBorderColor  = inactive
@@ -100,7 +100,7 @@ main = do
     , ((myModMask .|. shiftMask, xK_h), sendMessage Shrink)
     , ((myModMask .|. shiftMask, xK_l), sendMessage Expand)
     , ((myModMask .|. shiftMask, xK_bracketright)
-      , spawn $ "termite-wrapped --title=" ++ floatingTerminal)
+      , spawn $ "termonad --title " ++ floatingTerminal)
 
     , ((myModMask, xK_s), fixFullStack >> switchLayer)
     , ((myModMask, xK_f), sendMessage (Toggle FullScreen)
