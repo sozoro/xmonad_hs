@@ -292,7 +292,7 @@ instance (Default (l1 a), Default (l2 a))
 -- send left
 -- send right
 
-instance (LayoutClass l1 a, LayoutClass l2 a)
+instance (LayoutClass l1 a, LayoutClass l2 a, Typeable a)
          => LayoutClass (BGFGLayout (l1 a) (l2 a)) a where
   runLayout work@(W.Workspace _ _    Nothing)      _   = return ([], Nothing)
   runLayout work@(W.Workspace _ bgfg (Just stack)) rec = do
