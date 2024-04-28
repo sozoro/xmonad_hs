@@ -7,7 +7,7 @@
 
   outputs = { self, nixpkgs }: {
 
-    xmonad_hs = builtins.path { name = "xmonad.hs"; path = ./xmonad.hs; };
+    xmonad_hs = ./xmonad.hs;
 
     devShell.x86_64-linux = with nixpkgs.legacyPackages.x86_64-linux;
       pkgs.mkShell {
